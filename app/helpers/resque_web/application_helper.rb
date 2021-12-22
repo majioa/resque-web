@@ -65,5 +65,10 @@ module ResqueWeb
       end
       content_tag :p, text, :class => 'poll'
     end
+
+    def version
+       @const ||= Resque.constants.grep(/Version/i).first
+       Resque.const_get(@const)
+    end
   end
 end
