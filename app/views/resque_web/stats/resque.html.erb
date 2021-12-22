@@ -7,7 +7,7 @@
         <%= key %>
       </th>
       <td>
-        <%= value %>
+        <%= value.is_a?(Array) && value.join(", ") || value %>
       </td>
     </tr>
   <% end %>
